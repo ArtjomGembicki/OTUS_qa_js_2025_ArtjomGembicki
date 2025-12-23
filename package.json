@@ -1,0 +1,30 @@
+{
+  "name": "otus_qa_js_2025_artjomgembicki",
+  "version": "1.0.0",
+  "description": "Создано в рамках курса OTUS JavaScript QA Engineer",
+  "main": "index.js",
+  "scripts": {
+  "lint": "eslint . --fix",
+  "lint:ci": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtjomGembicki/OTUS_qa_js_2025_ArtjomGembicki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ArtjomGembicki/OTUS_qa_js_2025_ArtjomGembicki/issues"
+  },
+  "homepage": "https://github.com/ArtjomGembicki/OTUS_qa_js_2025_ArtjomGembicki#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4"
+  }
+}
