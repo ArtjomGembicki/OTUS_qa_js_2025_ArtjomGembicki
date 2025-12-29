@@ -19,11 +19,11 @@
 // }
 
 // // Проверка работы функций
-// console.log(kolobok('дедушка')); // Я от дедушки ушёл
-// console.log(kolobok('лиса'));     // Меня съели
+// console.log(kolobok('дедушка')); 
+// console.log(kolobok('лиса'));     
 
-// console.log(newYear('Дед Мороз'));     // Дед Мороз! Дед Мороз! Дед Мороз!
-// console.log(newYear('Снегурочка'));    // Снегурочка! Снегурочка! Снегурочка!
+// console.log(newYear('Дед Мороз'));
+// console.log(newYear('Снегурочка'));
 
 //Export вариант (node index.js)
 export function kolobok(character) {
