@@ -13,12 +13,10 @@
 //   }
 // }
 
-// // Задание 2
 // function newYear(name) {
 //   return `${name}! ${name}! ${name}!`;
 // }
 
-// // Проверка работы функций
 // console.log(kolobok('дедушка')); 
 // console.log(kolobok('лиса'));     
 
