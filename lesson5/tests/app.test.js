@@ -1,6 +1,7 @@
+import { test, expect } from "@playwright/test";
 import { nameIsValid, fullTrim, getTotal } from "../src/app.js";
 
-describe("nameIsValid", () => {
+test.describe("nameIsValid", () => {
   test("Valid Name", () => {
     const input = "artjom";
     const result = nameIsValid(input);
@@ -16,8 +17,8 @@ describe("nameIsValid", () => {
   });
 });
 
-describe("fullTrim", () => {
-  test("spaces incide", () => {
+test.describe("fullTrim", () => {
+  test("spaces inside", () => {
     expect(fullTrim("a r t j o m")).toBe("artjom");
   });
 
@@ -30,13 +31,10 @@ describe("fullTrim", () => {
   });
 });
 
-describe("getTotal", () => {
+test.describe("getTotal", () => {
   test("without discount", () => {
-    // Arrange
     const items = [{ price: 10, quantity: 2 }];
-    // Act
     const result = getTotal(items);
-    // Assert
     expect(result).toBe(20);
   });
 
@@ -48,11 +46,17 @@ describe("getTotal", () => {
     expect(() => getTotal([{ price: 10, quantity: 1 }], 200)).toThrow();
   });
 
-  test.each([
-    [[{ price: 10, quantity: 1 }], 0, 10],
-    [[{ price: 10, quantity: 2 }], 50, 10],
-    [[{ price: 5, quantity: 4 }], 25, 15],
-  ])("returns %i as total for %j with discount %i", (items, discount, expected) => {
-    expect(getTotal(items, discount)).toBe(expected);
+  test.describe("table tests", () => {
+    const cases = [
+      { items: [{ price: 10, quantity: 1 }], discount: 0, expected: 10 },
+      { items: [{ price: 10, quantity: 2 }], discount: 50, expected: 10 },
+      { items: [{ price: 5, quantity: 4 }], discount: 25, expected: 15 },
+    ];
+
+    for (const { items, discount, expected } of cases) {
+      test(`returns ${expected} for items=${JSON.stringify(items)} with discount=${discount}`, () => {
+        expect(getTotal(items, discount)).toBe(expected);
+      });
+    }
   });
 });
