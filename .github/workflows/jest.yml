@@ -30,9 +30,31 @@ jobs:
           name: jest-report
           path: jest-report
 
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download HTML report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: jest-report
+          path: jest-report
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: jest-report
           publish_branch: gh-pages
+
+      - name: Send Telegram notification
+        run: |
+          REPORT_URL="https://artjomgembicki.github.io/OTUS_qa_js_2025_ArtjomGembicki/"
+          curl -X POST \
+            -H 'Content-Type: application/json' \
+            -d "{\"chat_id\": \"${{ secrets.TELEGRAM_CHAT_ID }}\", \"text\": \"✅ Jest tests passed successfully.%0A📄 Report: ${REPORT_URL}\"}" \
+            https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage
