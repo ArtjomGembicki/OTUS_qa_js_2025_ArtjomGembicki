@@ -1,5 +1,5 @@
 module.exports = {
-  testMatch: ["**/jest-tests/**/*.test.[jt]s?(x)"],
+  testMatch: ["**/jest-tests/**/*.jest.[jt]s?(x)"],
   reporters: [
     "default",
     [
