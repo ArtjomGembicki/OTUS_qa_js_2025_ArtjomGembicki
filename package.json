@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ArtjomGembicki/OTUS_qa_js_2025_ArtjomGembicki/issues"
   },
