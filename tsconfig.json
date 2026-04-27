@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "strict": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    "types": ["node", "jest", "@playwright/test"],
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "sourceMap": false,
+    "declaration": false,
+    "declarationMap": false
+  },
+
+  "include": ["**/*.ts"],
+
+  "exclude": [
+    "node_modules",
+    "playwright-report",
+    "test-results",
+    "reports",
+    "build",
+    "coverage"
+  ]
+}
