@@ -13,10 +13,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
 
-  // ВАЖНО: правильная обработка workers
   ...(process.env.CI ? { workers: 1 } : {}),
 
   use: {
+    baseURL: 'https://rwa-188.130.251.61.sslip.io',
     trace: 'on-first-retry'
   },
 
