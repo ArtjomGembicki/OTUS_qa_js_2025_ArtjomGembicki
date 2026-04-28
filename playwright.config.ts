@@ -16,7 +16,6 @@ export default defineConfig({
   ...(process.env.CI ? { workers: 1 } : {}),
 
   use: {
-    baseURL: 'https://rwa-188.130.251.61.sslip.io',
     trace: 'on-first-retry'
   },
 
