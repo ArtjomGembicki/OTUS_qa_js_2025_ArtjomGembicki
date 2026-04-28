@@ -1,0 +1,16 @@
+{
+  "name": "lesson25",
+  "version": "1.0.0",
+  "main": "codecept.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "codeceptjs": "^3.7.9",
+    "playwright": "^1.59.1"
+  }
+}
