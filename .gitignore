@@ -1,6 +1,8 @@
 node_modules/
 allure-results/
 allure-report/
+test-results/
+lesson25/output/
 
 # Playwright
 /test-results/
